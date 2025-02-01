@@ -1,0 +1,12 @@
+C:\Users\M\Desktop\OrderManagementSolution\Entities\bin\Debug\net8.0\Entities.deps.json
+C:\Users\M\Desktop\OrderManagementSolution\Entities\bin\Debug\net8.0\Entities.dll
+C:\Users\M\Desktop\OrderManagementSolution\Entities\bin\Debug\net8.0\Entities.pdb
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.csproj.AssemblyReference.cache
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.AssemblyInfoInputs.cache
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.AssemblyInfo.cs
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.dll
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\refint\Entities.dll
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\Entities.pdb
+C:\Users\M\Desktop\OrderManagementSolution\Entities\obj\Debug\net8.0\ref\Entities.dll
