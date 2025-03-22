@@ -1,0 +1,42 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+bin/
+obj/
+
+# Dependency directories
+node_modules/
+packages/
+
+# Visual Studio files
+*.sln
+*.csproj
+*.user
+*.suo
+*.cache
+*.docstates
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# Visual Studio Code settings
+.vscode/
+
+# Environment files
+*.env
+
+# Logs
+*.log
+
+# Dependency lock files
+*.lock
+
+# NuGet Packages
+*.nupkg
+packages/
+
+# Miscellaneous
+Thumbs.db
+.DS_Store

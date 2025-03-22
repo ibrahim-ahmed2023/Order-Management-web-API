@@ -47,7 +47,7 @@ namespace OrderManagement.WebAPI.Controllers
                 return Problem(errorMessage);
             }
             //Create user
-            ApplicationUser user = new ApplicationUser()
+            ApplicationUser user = new()
             {
                 Email = registerDTO.Email,
                 PhoneNumber = registerDTO.PhoneNumber,

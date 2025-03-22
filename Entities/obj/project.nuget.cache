@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hFdX2UipLMg=",
+  "dgSpecHash": "NeJVK71KLJ4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\M\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\M\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

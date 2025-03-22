@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Services\\Services.csproj": {}
+    "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Services\\Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj": {
+    "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -42,7 +42,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.200"
       },
@@ -83,18 +83,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\M\\Desktop\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj": {
+    "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectUniqueName": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj",
         "projectName": "RepositoryContracts",
-        "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj",
+        "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj",
         "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\RepositoryContracts\\obj\\",
+        "outputPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\RepositoryContracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -115,8 +115,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj"
+              "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj"
               }
             }
           }
@@ -129,7 +129,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.200"
       },
@@ -152,18 +152,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\M\\Desktop\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj": {
+    "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj",
+        "projectUniqueName": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj",
         "projectName": "ServiceContracts",
-        "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj",
+        "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj",
         "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\ServiceContracts\\obj\\",
+        "outputPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\ServiceContracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -184,8 +184,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Entities\\Entities.csproj"
+              "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Entities\\Entities.csproj"
               }
             }
           }
@@ -198,7 +198,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.200"
       },
@@ -227,18 +227,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Services\\Services.csproj": {
+    "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Services\\Services.csproj",
+        "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\M\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\Services\\obj\\",
+        "outputPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -259,11 +259,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\M\\Desktop\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj": {
-                "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj"
+              "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj": {
+                "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\RepositoryContracts\\RepositoryContracts.csproj"
               },
-              "C:\\Users\\M\\Desktop\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj": {
-                "projectPath": "C:\\Users\\M\\Desktop\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj"
+              "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj": {
+                "projectPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\ServiceContracts\\ServiceContracts.csproj"
               }
             }
           }
@@ -276,7 +276,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.200"
       },
@@ -299,7 +299,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200-preview.0.24575.35/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

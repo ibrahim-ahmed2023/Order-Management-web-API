@@ -94,7 +94,7 @@ namespace OrderManagement.WebAPI.Middleware
         }
     }
 
-    // ✅ Extension method for WebApplication
+    // Extension method for WebApplication
     public static class JwtRefreshMiddlewareExtensions
     {
         public static IApplicationBuilder UseJwtRefreshMiddleware(this IApplicationBuilder app)
