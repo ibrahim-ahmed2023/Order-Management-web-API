@@ -24,29 +24,30 @@ namespace OrderManagement.WebAPI.StartupExtensions
         {
 
             // Add services to the container.
-             services.AddControllers(options => {
+                services.AddControllers(options => {
                 options.Filters.Add(new ProducesAttribute("application/json"));
                 options.Filters.Add(new ConsumesAttribute("application/json"));
-                //Authorization policy
+                // Authorization policy
                 var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
             })
-             .AddXmlSerializerFormatters();
-            // Add DbContext
+            .AddXmlSerializerFormatters();
+
+            // Add DbContext with connection string from appsettings
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
                 options.ConfigureWarnings(warnings =>
-                warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
+                    warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
             });
 
             services.AddTransient<IJwtService, JwtService>();
 
-            services.AddEndpointsApiExplorer(); //Generates description for all endpoints
+            services.AddEndpointsApiExplorer(); // Generates description for all endpoints
 
-            services.AddSwaggerGen(); //generates OpenAPI specification
+            services.AddSwaggerGen(); // Generates OpenAPI specification
 
-            //Add custom services
+            // Add custom services
             services.AddScoped<IOrdersRepository, OrdersRepository>();
             services.AddScoped<IOrderItemsRepository, OrderItemsRepository>();
             services.AddScoped<IOrdersAdderService, OrdersAdderService>();
@@ -59,42 +60,41 @@ namespace OrderManagement.WebAPI.StartupExtensions
             services.AddScoped<IOrderItemsGetterService, OrderItemsGetterService>();
             services.AddScoped<IOrderItemsUpdaterService, OrderItemsUpdaterService>();
 
-                services.AddIdentity<ApplicationUser, ApplicationRole>(options => {
+            // Identity configuration
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options => {
                 options.Password.RequiredLength = 5;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = true;
                 options.Password.RequireDigit = true;
             })
-             .AddEntityFrameworkStores<ApplicationDbContext>()
-             .AddDefaultTokenProviders()
-             .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
-             .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>()
-             ;
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders()
+            .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
+            .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
 
-
-            //JWT
+            // JWT Authentication setup
             services.AddAuthentication(options => {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-             .AddJwtBearer(options => {
-                 options.TokenValidationParameters = new TokenValidationParameters()
-                 {
-                     ValidateAudience = true,
-                     ValidAudience = configuration["Jwt:Audience"],
-                     ValidateIssuer = true,
-                     ValidIssuer =configuration["Jwt:Issuer"],
-                     ValidateLifetime = true,
-                     ValidateIssuerSigningKey = true,
-                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
-                 };
-             });
+            .AddJwtBearer(options => {
+                options.TokenValidationParameters = new TokenValidationParameters()
+                {
+                    ValidateAudience = true,
+                    ValidAudience = configuration["Jwt:Audience"],
+                    ValidateIssuer = true,
+                    ValidIssuer = configuration["Jwt:Issuer"],
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(configuration["Jwt:Key"]))
+                };
+            });
+
+            // Add authorization services
             services.AddAuthorization();
+
             return services;
         }
-
-
     }
 }

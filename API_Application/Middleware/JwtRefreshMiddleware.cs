@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using OrderManagement.Entities;
@@ -9,6 +7,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace OrderManagement.WebAPI.Middleware
 {
@@ -17,14 +16,14 @@ namespace OrderManagement.WebAPI.Middleware
         private readonly RequestDelegate _next;
         private readonly IConfiguration _configuration;
         private readonly IJwtService _jwtService;
-        private readonly ApplicationDbContext _context;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
 
-        public JwtRefreshMiddleware(RequestDelegate next, IConfiguration configuration, IJwtService jwtService, ApplicationDbContext context)
+        public JwtRefreshMiddleware(RequestDelegate next, IConfiguration configuration, IJwtService jwtService, IServiceScopeFactory serviceScopeFactory)
         {
             _next = next;
             _configuration = configuration;
             _jwtService = jwtService;
-            _context = context;
+            _serviceScopeFactory = serviceScopeFactory;
         }
 
         public async Task Invoke(HttpContext context)
@@ -38,12 +37,12 @@ namespace OrderManagement.WebAPI.Middleware
 
                 try
                 {
-                    var key = Encoding.UTF8.GetBytes(_configuration["JWT:Key"]);
+                    var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
                     var validationParameters = new TokenValidationParameters
                     {
                         ValidateIssuer = true,
                         ValidateAudience = true,
-                        ValidIssuer = _configuration["JWT:Issure"],
+                        ValidIssuer = _configuration["JWT:Issuer"],  // Corrected from Issure to Issuer
                         ValidAudience = _configuration["JWT:Audience"],
                         ValidateLifetime = true,
                         IssuerSigningKey = new SymmetricSecurityKey(key)
@@ -53,8 +52,13 @@ namespace OrderManagement.WebAPI.Middleware
                 }
                 catch (SecurityTokenExpiredException)
                 {
-                    // Token is expired, try refreshing it
                     await RefreshTokenAsync(context);
+                    return;
+                }
+                catch (Exception)
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    await context.Response.WriteAsync("Invalid or malformed token.");
                     return;
                 }
             }
@@ -72,29 +76,31 @@ namespace OrderManagement.WebAPI.Middleware
                 return;
             }
 
-            var user = await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
-            if (user == null || user.RefreshTokenExpirationDateTime < DateTime.UtcNow)
+            // Use IServiceScopeFactory to create a scope for resolving ApplicationDbContext
+            using (var scope = _serviceScopeFactory.CreateScope())
             {
-                context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                await context.Response.WriteAsync("Invalid or expired refresh token.");
-                return;
+                var _context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.RefreshToken == refreshToken);
+                if (user == null || user.RefreshTokenExpirationDateTime < DateTime.UtcNow)
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    await context.Response.WriteAsync("Invalid or expired refresh token.");
+                    return;
+                }
+
+                var authResponse = _jwtService.CreateJwtToken(user);
+
+                user.RefreshToken = authResponse.RefreshToken;
+                user.RefreshTokenExpirationDateTime = authResponse.RefreshTokenExpirationDateTime;
+                await _context.SaveChangesAsync();
+
+                context.Response.ContentType = "application/json";
+                await context.Response.WriteAsJsonAsync(authResponse);
             }
-
-            // Generate new access and refresh tokens
-            var authResponse = _jwtService.CreateJwtToken(user);
-
-            // Save new refresh token to the database
-            user.RefreshToken = authResponse.RefreshToken;
-            user.RefreshTokenExpirationDateTime = authResponse.RefreshTokenExpirationDateTime;
-            await _context.SaveChangesAsync();
-
-            // Return the new tokens in the response
-            context.Response.ContentType = "application/json";
-            await context.Response.WriteAsJsonAsync(authResponse);
         }
     }
 
-    // Extension method for WebApplication
     public static class JwtRefreshMiddlewareExtensions
     {
         public static IApplicationBuilder UseJwtRefreshMiddleware(this IApplicationBuilder app)
