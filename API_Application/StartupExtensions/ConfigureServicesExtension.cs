@@ -15,6 +15,7 @@ using OrderManagement.Services;
 using Services.JWT;
 using Services.JWTService;
 using Microsoft.AspNetCore.Mvc;
+using System.Text;
 
 namespace OrderManagement.WebAPI.StartupExtensions
 {
@@ -85,12 +86,12 @@ namespace OrderManagement.WebAPI.StartupExtensions
             .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
         }
 
-        /// <summary>
-        /// Configures JWT authentication.
-        /// </summary>
-        private static void ConfigureJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
+
+        public static void ConfigureJwtAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IJwtService, JwtService>();
+
+            var key = configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT Key is missing from configuration.");
 
             services.AddAuthentication(options =>
             {
@@ -107,7 +108,7 @@ namespace OrderManagement.WebAPI.StartupExtensions
                     ValidIssuer = configuration["Jwt:Issuer"],
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(configuration["Jwt:Key"]?? string.Empty))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key))
                 };
             });
         }

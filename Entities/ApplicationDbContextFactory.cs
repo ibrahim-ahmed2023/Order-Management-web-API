@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace OrderManagement.Entities
 {
@@ -8,12 +9,21 @@ namespace OrderManagement.Entities
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
-            // Configure the DbContextOptions
+            // Set the base path to the api_application directory (relative to entities)
+            var basePath = Path.Combine(Directory.GetCurrentDirectory(), "..", "api_application");
+
+            // Build configuration
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            // Get connection string
+            string connectionString = configuration.GetConnectionString("DefaultConnection") 
+                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+            // Configure DbContextOptions
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-
-            // Replace with your actual connection string
-            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=OrdersDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
-
             optionsBuilder.UseSqlServer(connectionString);
 
             return new ApplicationDbContext(optionsBuilder.Options);
