@@ -51,5 +51,6 @@ namespace Entities.Models
         [Range(0, double.MaxValue, ErrorMessage = "The total price of the order item.")]
         [Column(TypeName = "decimal")]
         public decimal TotalPrice { get; set; }
+
     }
 }

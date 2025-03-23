@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OrderManagement.WebAPI.Exceptions;
+using System.Net;
 
 namespace OrderManagement.WebAPI.Controllers
 {
@@ -32,21 +34,32 @@ namespace OrderManagement.WebAPI.Controllers
             var context = HttpContext.Features.Get<IExceptionHandlerFeature>();
             if (context?.Error == null)
             {
-                // No error occurred, return a success response or a neutral message
                 return Ok(new { message = "No error occurred." });
             }
 
             var exception = context.Error;
-            // Log the exception details
+            var statusCode = exception switch
+            {
+                NotFoundException => (int)HttpStatusCode.NotFound,               // 404
+                UnauthorizedException => (int)HttpStatusCode.Unauthorized,       // 401
+                BadRequestException => (int)HttpStatusCode.BadRequest,           // 400
+                ForbiddenException => (int)HttpStatusCode.Forbidden,             // 403
+                InternalServerException => (int)HttpStatusCode.InternalServerError, // 500
+                ConflictException => (int)HttpStatusCode.Conflict,               // 409
+                _ => (int)HttpStatusCode.InternalServerError
+            };
+
             _logger.LogError(exception, "Unhandled exception occurred.");
 
-            // Return the problem response with details of the error
-            return Problem(
-                detail: exception.Message,
-                title: "An internal server error occurred",
-                statusCode: 500
-            );
-        }
+            var problemDetails = new ProblemDetails
+            {
+                Status = statusCode,
+                Title = "An error occurred",
+                Detail = exception.Message,
+                Instance = HttpContext.Request.Path
+            };
 
+            return StatusCode(statusCode, problemDetails);
+        }
     }
 }
