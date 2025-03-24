@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace OrderManagement.WebAPI.Controllers
 {
     [ApiController]
-    [Route("api/orders/{orderId}/items")]
+    [Route("api/[controller]")]
     public class OrderItemsController : ControllerBase
     {
         private readonly IOrderItemsGetterService _orderItemsGetterService;
