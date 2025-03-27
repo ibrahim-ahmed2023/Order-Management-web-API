@@ -24,8 +24,9 @@ else
 }
 
 // Security middleware
-app.UseHttpsRedirection();
+app.UseDefaultFiles();
 app.UseStaticFiles();
+app.UseHttpsRedirection();
 
 // CORS (if configured)
 app.UseCors();
