@@ -47,7 +47,7 @@ namespace OrderManagement.Services
 
             var order = await _ordersRepository.GetOrderByOrderId(orderId);
             var orderResponse = order?.ToOrderResponse();
-            orderResponse.OrderItems = await _orderItemsGetterService.GetOrderItemsByOrderId(orderResponse.OrderId);
+            orderResponse!.OrderItems = await _orderItemsGetterService.GetOrderItemsByOrderId(orderResponse.OrderId);
 
             if (orderResponse == null)
             {

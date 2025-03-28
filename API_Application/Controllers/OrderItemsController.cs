@@ -12,6 +12,7 @@ namespace OrderManagement.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class OrderItemsController : ControllerBase
     {
         private readonly IOrderItemsGetterService _orderItemsGetterService;

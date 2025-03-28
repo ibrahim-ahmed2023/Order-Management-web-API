@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|c:\\users\\m\\desktop\\projects\\ordermanagementsolution\\api_application\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|solutionrelative:api_application\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|c:\\users\\m\\desktop\\projects\\ordermanagementsolution\\api_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|solutionrelative:api_application\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|c:\\users\\m\\desktop\\projects\\ordermanagementsolution\\api_application\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|solutionrelative:api_application\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|c:\\users\\m\\desktop\\projects\\ordermanagementsolution\\api_application\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|solutionrelative:api_application\\controllers\\orderitemscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|c:\\users\\m\\desktop\\projects\\ordermanagementsolution\\api_application\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0EDCD1D5-97E5-4CF8-A81A-5EF83361D153}|API_Application\\OrderManagement.WebAPI.csproj|solutionrelative:api_application\\controllers\\errorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Program.cs",
-              "RelativeDocumentMoniker": "API_Application\\Program.cs",
-              "ToolTip": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Program.cs",
-              "RelativeToolTip": "API_Application\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-27T16:18:57.114Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -40,15 +35,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "API_Application\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Properties\\launchSettings.json",
-              "RelativeToolTip": "API_Application\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-27T16:21:16.181Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Program.cs",
+              "RelativeDocumentMoniker": "API_Application\\Program.cs",
+              "ToolTip": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Program.cs",
+              "RelativeToolTip": "API_Application\\Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAhwDEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T14:21:48.923Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "API_Application\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "API_Application\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T04:58:51.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderItemsController.cs",
+              "DocumentMoniker": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Controllers\\OrderItemsController.cs",
+              "RelativeDocumentMoniker": "API_Application\\Controllers\\OrderItemsController.cs",
+              "ToolTip": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Controllers\\OrderItemsController.cs",
+              "RelativeToolTip": "API_Application\\Controllers\\OrderItemsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T04:56:46.197Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorController.cs",
+              "DocumentMoniker": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Controllers\\ErrorController.cs",
+              "RelativeDocumentMoniker": "API_Application\\Controllers\\ErrorController.cs",
+              "ToolTip": "C:\\Users\\M\\Desktop\\Projects\\OrderManagementSolution\\API_Application\\Controllers\\ErrorController.cs",
+              "RelativeToolTip": "API_Application\\Controllers\\ErrorController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAIAywAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-28T04:56:35.297Z"
             }
           ]
         }

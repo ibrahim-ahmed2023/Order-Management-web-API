@@ -36,7 +36,15 @@ namespace OrderManagement.WebAPI.StartupExtensions
             services.ConfigureSwagger();
             services.RegisterRepositoriesAndServices();
             services.AddAuthorization();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                           .AllowAnyMethod()
+                           .AllowAnyHeader();
+                });
+            });
             return services;
         }
 
@@ -49,8 +57,6 @@ namespace OrderManagement.WebAPI.StartupExtensions
             {
                 options.Filters.Add(new ProducesAttribute("application/json"));
                 options.Filters.Add(new ConsumesAttribute("application/json"));
-                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
-                options.Filters.Add(new AuthorizeFilter(policy));
             }).AddXmlSerializerFormatters();
         }
 

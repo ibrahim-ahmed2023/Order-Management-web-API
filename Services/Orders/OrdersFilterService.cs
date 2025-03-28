@@ -31,15 +31,15 @@ namespace OrderManagement.Services
             {
                 case nameof(OrderResponse.CustomerName):
                     // Filter orders by customer name
-                    filteredOrders = await _ordersRepository.GetFilteredOrders(o => o.CustomerName.Contains(searchString, StringComparison.OrdinalIgnoreCase));
+                    filteredOrders = await _ordersRepository.GetFilteredOrders(o => o.CustomerName!.Contains(searchString!, StringComparison.OrdinalIgnoreCase));
                     break;
                 case nameof(OrderResponse.OrderDate):
                     // Filter orders by order date
-                    filteredOrders = await _ordersRepository.GetFilteredOrders(o => o.OrderDate.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase));
+                    filteredOrders = await _ordersRepository.GetFilteredOrders(o => o.OrderDate.ToString()!.Contains(searchString!, StringComparison.OrdinalIgnoreCase));
                     break;
                 case nameof(OrderResponse.OrderNumber):
                     // Filter orders by order number
-                    filteredOrders = await _ordersRepository.GetFilteredOrders(o => o.OrderNumber.Contains(searchString, StringComparison.OrdinalIgnoreCase));
+                    filteredOrders = await _ordersRepository.GetFilteredOrders(o => o.OrderNumber!.Contains(searchString!, StringComparison.OrdinalIgnoreCase));
                     break;
                 default:
                     // Invalid search field, return an empty list
